@@ -68,10 +68,16 @@ async def send_sec_alerts(channel, rss_url, seen_entries):
     Fetch SEC feed, process the entries, and send alerts to the Discord channel.
     """
     sec_entries = fetch_latest_sec_filings(rss_url)
+    
     for entry in sec_entries:
         entry_id = entry.id if hasattr(entry, 'id') else entry.link
         if entry_id in seen_entries:
             continue
+
+        # Check if the 'cik' attribute exists, and log the entire entry if it doesn't
+        if not hasattr(entry, 'cik'):
+            print(f"Entry {entry_id} has no 'cik' attribute. Full entry: {entry}")
+            continue  # Skip this entry if 'cik' is missing
 
         cik_number = entry.cik
         accession_number = get_accession(cik_number)
