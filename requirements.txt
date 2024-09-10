@@ -1,0 +1,7 @@
+discord.py
+yfinance
+psutil
+feedparser
+requests
+beautifulsoup4
+python-dotenv
