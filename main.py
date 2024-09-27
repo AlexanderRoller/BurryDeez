@@ -95,6 +95,16 @@ async def rsa(ctx, ticker: str, split_ratio: str):
 async def run_all_tests(ctx):
     await test_all(ctx, bot, OCC_RSS_URL, SEC_RSS_URL, seen_entries)
 
+@bot.command(name='usercount', help='Returns the total number of users in the server.')
+async def usercount(ctx):
+    # Get the total number of members in the server (guild)
+    guild = ctx.guild
+    member_count = guild.member_count
+    
+    # Send a message with the member count
+    response = f"👥 **This server has {member_count} members!**"
+    await ctx.send(response)
+
 @tasks.loop(minutes=1)
 async def check_feed():
     print("Checking feed for updates...")

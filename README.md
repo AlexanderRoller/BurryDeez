@@ -1,6 +1,6 @@
 # OCC Contract Adjustment Alert Bot
 
-This Discord bot provides a suite of financial utilities designed to monitor corporate actions like reverse stock splits and help users stay informed about the stock market. It offers live stock price fetching, options intrinsic value calculation, and both **OCC** and **SEC** monitoring for reverse stock split memos. Additionally, the bot can track the server's health to ensure smooth operation.
+This Discord bot provides a suite of financial utilities designed to monitor corporate actions like reverse stock splits and help users stay informed about the stock market. It offers live stock price fetching, options intrinsic value calculation, and both **OCC** and **SEC** monitoring for reverse stock split memos. Additionally, the bot can track the server's health and provide insights on server membership.
 
 ## Features
 
@@ -13,6 +13,8 @@ This Discord bot provides a suite of financial utilities designed to monitor cor
 - **📰 SEC Filing Monitoring**: The bot also monitors the **SEC (Securities and Exchange Commission)** RSS feed for new filings, alerting users when relevant documents—such as those mentioning reverse stock splits—are published. It provides direct links to the SEC's filing pages.
 
 - **🖥️ Server Health Monitoring**: Track your server's health with real-time updates on **CPU usage**, **memory usage**, **disk usage**, **uptime**, and even **component temperatures** (useful for monitoring Raspberry Pi or other hardware).
+
+- **👥 User Count**: The bot can also provide the number of users currently in the Discord server.
 
 ---
 
@@ -105,6 +107,10 @@ Here are the available commands you can use with the bot:
 - **`!health`**
   - **Description**: Displays the server's current health status, including CPU usage, memory usage, disk usage, uptime, and temperature (if applicable).
   - **Example**: `!health` will return a status update on server performance.
+
+- **`!usercount`**
+  - **Description**: Returns the total number of members in the Discord server.
+  - **Example**: `!usercount` will return the current member count of the server.
 
 ---
 
